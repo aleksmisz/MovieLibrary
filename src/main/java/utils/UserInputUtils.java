@@ -1,5 +1,6 @@
 package utils;
 
+import org.models.Actor;
 import org.models.MenuOptions;
 
 import java.util.Scanner;
@@ -30,5 +31,11 @@ public class UserInputUtils{
             System.out.println("WRONG OPTION SELECTED! TRY AGAIN");
             return gesSelectedOptionFromUser();
         }
+    }
+
+    public static Actor getActorFromUser() {
+        System.out.println("Type an actor: ");
+        String[] actors = scanner.nextLine().split(" ");
+        return new Actor(actors[0], actors[1]);
     }
 }
